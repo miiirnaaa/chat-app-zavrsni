@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { ChatContext } from "../../context/ChatContext";
+import avatar from "../../images/default_avatar.jpg";
 
 const Message = ({ message }) => {
   const { currentUser } = useContext(AuthContext);
@@ -21,12 +22,12 @@ const Message = ({ message }) => {
         <img
           src={
             message.senderId === currentUser.uid
-              ? currentUser.img
-              : data.user.img
+              ? currentUser.img ?? avatar
+              : data.user.img ?? avatar
           }
           alt=""
         />
-        <span>{new Date(message.date).getTime()}</span>
+        <span>{new Date(message.date.seconds * 1000).toLocaleTimeString()}</span>
       </div>
       <div className="messageContent">
         {message.text && <p>{message.text}</p>}

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/chat-app-zavrsni/static/css/main.bbd55986.css",
-    "main.js": "/chat-app-zavrsni/static/js/main.0c24f6c1.js",
+    "main.css": "/chat-app-zavrsni/static/css/main.db391af8.css",
+    "main.js": "/chat-app-zavrsni/static/js/main.4ceccbd7.js",
     "static/media/design.jpg": "/chat-app-zavrsni/static/media/design.1fc261d2ee5ee7e39325.jpg",
     "static/media/back.jpg": "/chat-app-zavrsni/static/media/back.0b83ba18f2d42d1d697d.jpg",
     "static/media/Chat.png": "/chat-app-zavrsni/static/media/Chat.aa0cd716ee65457fbfdb.png",
@@ -9,11 +9,11 @@
     "static/media/dodaj.png.png": "/chat-app-zavrsni/static/media/dodaj.png.327bbdbd02e938aea997.png",
     "static/media/tweet.png": "/chat-app-zavrsni/static/media/tweet.8e65601e69067aadfe55.png",
     "index.html": "/chat-app-zavrsni/index.html",
-    "main.bbd55986.css.map": "/chat-app-zavrsni/static/css/main.bbd55986.css.map",
-    "main.0c24f6c1.js.map": "/chat-app-zavrsni/static/js/main.0c24f6c1.js.map"
+    "main.db391af8.css.map": "/chat-app-zavrsni/static/css/main.db391af8.css.map",
+    "main.4ceccbd7.js.map": "/chat-app-zavrsni/static/js/main.4ceccbd7.js.map"
   },
   "entrypoints": [
-    "static/css/main.bbd55986.css",
-    "static/js/main.0c24f6c1.js"
+    "static/css/main.db391af8.css",
+    "static/js/main.4ceccbd7.js"
   ]
 }

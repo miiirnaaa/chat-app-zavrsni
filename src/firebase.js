@@ -11,13 +11,19 @@ const firebaseConfig = {
   // storageBucket: "chat-e5b29.appspot.com",
   // messagingSenderId: "708777732831",
   // appId: "1:708777732831:web:b11dc572cc67f1b802976a",
-  apiKey: "AIzaSyDBTEhJCdZiT0w3YAASO-y_IJPB-yHs4ac",
-  authDomain: "chat-app-d7940.firebaseapp.com",
-  projectId: "chat-app-d7940",
-  storageBucket: "chat-app-d7940.appspot.com",
-  messagingSenderId: "938696904955",
-  appId: "1:938696904955:web:ff08cf131b930cb232e05e",
-  measurementId: "G-Q8TPKKP4QP"
+  // apiKey: "AIzaSyDBTEhJCdZiT0w3YAASO-y_IJPB-yHs4ac",
+  // authDomain: "chat-app-d7940.firebaseapp.com",
+  // projectId: "chat-app-d7940",
+  // storageBucket: "chat-app-d7940.appspot.com",
+  // messagingSenderId: "938696904955",
+  // appId: "1:938696904955:web:ff08cf131b930cb232e05e",
+  // measurementId: "G-Q8TPKKP4QP"
+  apiKey: "AIzaSyAgmeweDDH5i0eft7Q2HeS6zlDFhHaeMRs",
+  authDomain: "chat-zavrsni.firebaseapp.com",
+  projectId: "chat-zavrsni",
+  storageBucket: "chat-zavrsni.appspot.com",
+  messagingSenderId: "44128719584",
+  appId: "1:44128719584:web:aea5376fc3153dc72bb685"
 };
 
 export const app = initializeApp(firebaseConfig);

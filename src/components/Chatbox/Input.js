@@ -25,9 +25,6 @@ const Input = () => {
       return;
     }
 
-    setText("");
-    setImg(null);
-
     if (img) {
       const storageRef = ref(storage, uuid());
 
@@ -75,13 +72,16 @@ const Input = () => {
       },
       [data.chatId + ".date"]: serverTimestamp(),
     });
+
+    setText("");
+    setImg(null);
   };
 
   const handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleSend();
     }
-  }
+  };
 
   return (
     <div className="input">

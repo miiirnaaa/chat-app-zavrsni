@@ -22,12 +22,14 @@ const Message = ({ message }) => {
         <img
           src={
             message.senderId === currentUser.uid
-              ? currentUser.img ?? avatar
-              : data.user.img ?? avatar
+              ? (currentUser.img || currentUser.photoURL) ?? avatar
+              : (data.user.img || currentUser.img) ?? avatar
           }
           alt=""
         />
-        <span>{new Date(message.date.seconds * 1000).toLocaleTimeString()}</span>
+        <span>
+          {new Date(message.date.seconds * 1000).toLocaleTimeString()}
+        </span>
       </div>
       <div className="messageContent">
         {message.text && <p>{message.text}</p>}

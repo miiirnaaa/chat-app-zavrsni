@@ -12,10 +12,12 @@ import {
 } from "firebase/firestore";
 import { db } from "../../firebase";
 import { AuthContext } from "../../context/AuthContext";
+import { ChatContext } from "../../context/ChatContext";
 const Search = () => {
   const [username, setUsername] = useState("");
   const [user, setUser] = useState(null);
   const [err, setErr] = useState(false);
+  const { dispatch } = useContext(ChatContext);
 
   const { currentUser } = useContext(AuthContext);
 
@@ -40,25 +42,25 @@ const Search = () => {
   };
 
   const handleSelect = async () => {
-    //check whether the group(chats in firestore) exists, if not create
+    //check whether the group(conversations in firestore) exists, if not create
     const combinedId =
       currentUser.uid > user.uid
         ? currentUser.uid + user.uid
         : user.uid + currentUser.uid;
-    
+
     try {
       const res = await getDoc(doc(db, "conversations", combinedId));
 
       if (!res.exists()) {
-        //create a chat in chats collection
+        //create a chat in conversations collection
         await setDoc(doc(db, "conversations", combinedId), { messages: [] });
 
-        //create user chats
+        //create user chats in userConversations
         await updateDoc(doc(db, "userConversations", currentUser.uid), {
           [combinedId + ".userInfo"]: {
             uid: user.uid,
             displayName: user.displayName,
-            img: user.img,
+            img: user.photoURL,
           },
           [combinedId + ".date"]: serverTimestamp(),
         });
@@ -67,13 +69,13 @@ const Search = () => {
           [combinedId + ".userInfo"]: {
             uid: currentUser.uid,
             displayName: currentUser.displayName,
-            img: currentUser.img,
+            img: currentUser.photoURL,
           },
           [combinedId + ".date"]: serverTimestamp(),
         });
       }
     } catch (err) {}
-
+    dispatch({ type: "CHANGE_USER", payload: user });
     setUser(null);
     setUsername("");
   };
@@ -91,7 +93,7 @@ const Search = () => {
       {err && <span>User not found!</span>}
       {user && (
         <div className="userChat" onClick={handleSelect}>
-          <img src={user.img} alt="" />
+          <img src={user.photoURL} alt="" />
           <div className="userChatInfo">
             <span>{user.displayName}</span>
           </div>

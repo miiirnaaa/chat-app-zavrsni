@@ -12,9 +12,12 @@ const Conversations = () => {
 
   useEffect(() => {
     const getConversations = () => {
-      const unsub = onSnapshot(doc(db, "userConversations", currentUser.uid), (doc) => {
-        setConversations(doc.data() || []);
-      });
+      const unsub = onSnapshot(
+        doc(db, "userConversations", currentUser.uid),
+        (doc) => {
+          setConversations(doc.data() || []);
+        }
+      );
 
       return () => {
         unsub();
@@ -27,7 +30,8 @@ const Conversations = () => {
   const handleSelect = (u) => {
     dispatch({ type: "CHANGE_USER", payload: u });
   };
-
+  // first element is chatId and second is object
+  console.log(Object.entries(conversations));
   return (
     <div className="conversations">
       {Object.entries(conversations)
@@ -38,7 +42,10 @@ const Conversations = () => {
             key={chat[0]}
             onClick={() => handleSelect(chat[1].userInfo)}
           >
-            <img src={chat[1].userInfo?.img} alt="" />
+            <img
+              src={chat[1].userInfo?.photoURL || chat[1].userInfo?.img}
+              alt=""
+            />
             <div className="userChatInfo">
               <span>{chat[1].userInfo?.displayName}</span>
               <p>{chat[1].lastMessage?.text}</p>

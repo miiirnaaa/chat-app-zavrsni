@@ -69,11 +69,11 @@ const Register = () => {
         <form onSubmit={handleSubmit}>
           <input required type="text" placeholder="display name" />
           <input required type="email" placeholder="email" />
-          <input required type="password" placeholder="password" minLength={6}/>
+          <input required type="password" placeholder="password (min 6 signs)" minLength={6}/>
           <input style={{ display: "none" }} type="file" id="file" />
           <label htmlFor="file">
             <img src={Add} alt="" />
-            <span>Add picture</span>
+            <span>+Add picture - required!</span>
           </label>
           <button disabled={loading}>Sign up</button>
           {loading && "Uploading and compressing the image please wait..."}

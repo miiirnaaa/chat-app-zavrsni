@@ -34,6 +34,7 @@
     align-items: center;
     color: white;
 
+
     .logo {
       color: #5d5b8d;
       font-weight: bold;
@@ -117,7 +118,7 @@
       flex: 1;
       background-color: rgb(91, 141, 129);
       position: relative;
-
+      
       .navbar {
         display: flex;
         align-items: center;
@@ -126,6 +127,7 @@
         padding: 10px;
         justify-content: space-between;
         color: #ddddf7;
+       
 
         .logo {
           font-weight: bold;

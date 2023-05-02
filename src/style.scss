@@ -33,6 +33,9 @@
     gap: 10px;
     align-items: center;
     color: white;
+    @include mobile {
+      width: 60%;
+    }
 
 
     .logo {
@@ -118,6 +121,9 @@
       flex: 1;
       background-color: rgb(91, 141, 129);
       position: relative;
+      @include mobile {
+        width: 20%;
+      }
       
       .navbar {
         display: flex;
@@ -127,6 +133,7 @@
         padding: 10px;
         justify-content: space-between;
         color: #ddddf7;
+
       
 
         .logo {
@@ -139,6 +146,9 @@
         .user {
           display: flex;
           gap: 10px;
+          @include mobile {
+            width: 20%;
+          }
 
           img {
             background-color: #ddddf7;
@@ -164,18 +174,29 @@
       .search {
         border-bottom: 1px solid gray;
         background-color: rgb(171, 121, 121);
+        
 
         .searchForm {
           padding: 10px;
+          @include mobile {
+            width: 20%;
+          }
 
           input {
             background-color: gray;
             border: none;
             color: white;
             outline: none;
+            @include mobile {
+              width: 400%;
+            }
 
             &::placeholder {
               color: lightgray;
+              @include mobile {
+                width: 100%;
+                
+              }
             }
           }
         }
@@ -199,12 +220,19 @@
           height: 50px;
           border-radius: 50%;
           object-fit: cover;
+          @include mobile {
+            width: 30px;
+            height: 30px;
+          }
         }
 
         .userChatInfo {
           span {
             font-size: 18px;
             font-weight: 500;
+            @include mobile {
+              font-size: 10px;
+            }
           }
           p {
             font-size: 14px;
@@ -319,10 +347,14 @@
           display: flex;
           align-items: center;
           gap: 10px;
-
+          
           img {
             height: 24px;
             cursor: pointer;
+            @include mobile {
+              width: 15px;
+              height: 15px;
+            }
           }
 
           button {
@@ -331,6 +363,7 @@
             color: white;
             background-color: #8da4f1;
             cursor: pointer;
+        
           }
           
         }

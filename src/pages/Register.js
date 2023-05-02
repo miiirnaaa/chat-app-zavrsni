@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import Add from "../images/dodaj.png.png"
+import Add from "../images/dodaj.png.png";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db, storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate, Link } from "react-router-dom";
-import Chat from "../images/Chat.png"
-
+import Chat from "../images/Chat.png";
 
 const Register = () => {
   const [err, setErr] = useState(false);
@@ -35,14 +34,14 @@ const Register = () => {
             //Update profile
             await updateProfile(res.user, {
               displayName,
-              img: downloadURL,
+              photoURL: downloadURL,
             });
             //create user on firestore
             await setDoc(doc(db, "users", res.user.uid), {
               uid: res.user.uid,
               displayName,
               email,
-              img: downloadURL,
+              photoURL: downloadURL,
             });
 
             //create empty user chats on firestore
@@ -64,7 +63,7 @@ const Register = () => {
   return (
     <div className="formContainer">
       <div className="formWrapper">
-      <img className="ChatImg" width={90} src={Chat} alt="" />
+        <img className="ChatImg" width={90} src={Chat} alt="" />
         <span className="logo">Mirnin Chat</span>
         <span className="title">Register</span>
         <form onSubmit={handleSubmit}>

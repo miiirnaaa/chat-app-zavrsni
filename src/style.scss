@@ -118,7 +118,13 @@
       flex: 1;
       background-color: rgb(91, 141, 129);
       position: relative;
+      @include mobile{
+        width: fit-content;
+        height: auto;
+        position: absolute;
+        top: 30px;
       
+      }      
       .navbar {
         display: flex;
         align-items: center;

@@ -16,9 +16,9 @@ const Conversation = () => {
         <span>
           {data.user?.displayName}</span>
         <div className="chatIcons">
-          <img src={video} alt="" />
-          <img src={face} alt="" />
-          <img src={tweet} alt="" />
+          <a href="https://www.monkey.app/#/home"><img src={video} alt="" /></a>
+          <a href="https://www.facebook.com/login/"><img src={face} alt="" /></a>
+          <a href="https://twitter.com/"><img src={tweet} alt="" /></a>
         </div>
       </div>
       <Messages />
